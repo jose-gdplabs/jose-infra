@@ -1,3 +1,4 @@
-resource "null_resource" "hello"{
-    triggers = { env = "prod", test = "1"}
+module "hello" {
+  source = "../modules/hello"
+  env    = "prod"
 }
