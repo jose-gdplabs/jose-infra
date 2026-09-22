@@ -1,3 +1,3 @@
 resource "null_resource" "hello"{
-    triggers = { env = "dev"}
+    triggers = { env = "dev", coba = "1"}
 }
