@@ -5,10 +5,10 @@ terraform {
     region         = "us-east-1"
     dynamodb_table = "terraform-locks"
 
-    # SeaweedFS + DynamoDB Local, hostname dari docker compose network Atlantis
+    # SeaweedFS + DynamoDB Local di VM atlantis-onprem
     endpoints = {
-      s3       = "http://seaweedfs:8333"
-      dynamodb = "http://dynamodb:8000"
+      s3       = "http://192.168.56.102:8333"
+      dynamodb = "http://192.168.56.102:8000"
     }
     use_path_style              = true
     skip_credentials_validation = true
