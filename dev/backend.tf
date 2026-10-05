@@ -1,14 +1,13 @@
 terraform {
   backend "s3" {
-    bucket         = "tfstate"
-    key            = "dev/terraform.tfstate"
-    region         = "us-east-1"
-    dynamodb_table = "terraform-locks"
+    bucket       = "tfstate"
+    key          = "dev/terraform.tfstate"
+    region       = "us-east-1"
+    use_lockfile = true
 
-    # SeaweedFS + DynamoDB Local di VM atlantis-onprem
+    # SeaweedFS di VM atlantis-onprem, lock = dev/terraform.tfstate.tflock di bucket yang sama
     endpoints = {
-      s3       = "http://192.168.56.102:8333"
-      dynamodb = "http://192.168.56.102:8000"
+      s3 = "http://192.168.56.102:8333"
     }
     use_path_style              = true
     skip_credentials_validation = true
