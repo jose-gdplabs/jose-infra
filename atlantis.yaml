@@ -2,9 +2,10 @@ version: 3
 projects:
   - name: dev
     dir: dev
+    workflow: terragrunt # didefinisiin di repos.yaml server
     autoplan:
       enabled: true
-      when_modified: ["*.tf", "../modules/**/*.tf"]
+      when_modified: ["*.tf", "../modules/**/*.tf", "terragrunt.hcl", "../root.hcl"]
   - name: prod
     dir: prod
     autoplan:
