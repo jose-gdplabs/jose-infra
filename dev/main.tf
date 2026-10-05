@@ -1,4 +1,4 @@
 module "hello" {
   source = "../modules/hello"
-  env    = "dev"
+  env    = "dev-testing"
 }
